@@ -1,0 +1,15 @@
+name: Some Workflow
+
+on:
+  schedule:
+    - cron:  '0 4 3 * *'
+  workflow_dispatch:
+    inputs:
+      an_input:
+        description: 'Input?'
+        required: true
+        default: 'Foo'
+jobs:
+  build:
+  # Do something with ${{ github.event.inputs.an_input }}
+  echo ${{ github.event.inputs.an_input }}
