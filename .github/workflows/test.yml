@@ -14,7 +14,6 @@ jobs:
     runs-on: 'ubuntu-20.04'
     steps:
       -name: Print some text
-       run: echo "Periodically printing passages"
        run: echo ${IN}
     env:
         IN: ${{ github.event.inputs.an_input }}
