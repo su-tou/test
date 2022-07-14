@@ -6,12 +6,15 @@ on:
   workflow_dispatch:
     inputs:
       an_input:
-        description: 'Input?'
+        type: boolean
         required: true
-        default: 'Foo'
+        default: true
 jobs:
-  build:
-  # Do something with ${{ github.event.inputs.an_input }}
-  echo ${IN}
-  env:
-    IN: ${{ github.event.inputs.an_input }}
+  print_text:
+    runs-on: 'ubuntu-20.04'
+    steps:
+      -name: Print some text
+       run: echo "Periodically printing passages"
+       run: echo ${IN}
+    env:
+        IN: ${{ github.event.inputs.an_input }}
