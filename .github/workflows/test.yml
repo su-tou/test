@@ -13,7 +13,7 @@ jobs:
   print_text:
     runs-on: 'ubuntu-20.04'
     steps:
-      -name: Print some text
-       run: echo ${IN}
-    env:
-        IN: ${{ github.event.inputs.an_input }}
+      - name: Print some text
+        run: echo ${IN}
+        env:
+          IN: ${{ github.event.inputs.an_input }}
