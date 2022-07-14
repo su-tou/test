@@ -1,14 +1,9 @@
 name: Some Workflow
 
-inputs:
-  an_input:
-    type: boolean
-    required: true
-    default: false
 on:
   schedule:
-    - cron:  "5 8 14 7 *"
-    - cron:  "15 8 14 7 *"
+    - cron:  "0 1 15 7 *"
+    - cron:  "5 1 15 7 *"
   workflow_dispatch:
     inputs:
       an_input:
@@ -23,3 +18,6 @@ jobs:
         run: echo ${IN}
         env:
           IN: ${{ github.event.inputs.an_input }}
+        if: github.event_name =='schedule'
+        with:
+          IN: false
