@@ -9,14 +9,14 @@ on:
         type: boolean
         required: true
         default:false 
-  schedule:
-    - cron:  '5 1 14 7 *'
-    - cron:  '15 1 14 7 *'
-    inputs:
-      an_input:
-        type: boolean
-        required: true
-        default: true
+#  schedule:
+#    - cron:  '5 1 14 7 *'
+#    - cron:  '15 1 14 7 *'
+#    inputs:
+#      an_input:
+#        type: boolean
+#        required: true
+#        default: true
   workflow_dispatch:
     inputs:
       an_input:
