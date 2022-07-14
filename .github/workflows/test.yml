@@ -12,4 +12,6 @@ on:
 jobs:
   build:
   # Do something with ${{ github.event.inputs.an_input }}
-  echo ${{ github.event.inputs.an_input }}
+  echo ${IN}
+  env:
+    IN: ${{ github.event.inputs.an_input }}
