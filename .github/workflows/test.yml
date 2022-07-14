@@ -1,12 +1,12 @@
 name: Some Workflow
 
+inputs:
+  an_input:
+    type: boolean
+    required: true
+    default: false
 on:
   schedule:
-    inputs:
-      an_input:
-        type: boolean
-        required: true
-        default: false
     - cron:  "5 8 14 7 *"
     - cron:  "15 8 14 7 *"
   workflow_dispatch:
