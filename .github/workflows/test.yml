@@ -2,20 +2,13 @@ name: Some Workflow
 
 on:
   schedule:
-    - cron:  "5 2 14 7 *"
-    - cron:  "15 2 14 7 *"
-      inputs:
-        an_input:
-          type: boolean
-          required: true
-          default: true
-    - cron:  "10 2 14 7 *"
-    - cron:  "20 2 14 7 *"
-      inputs:
-        an_input:
-          type: boolean
-          required: true
-          default: false
+    inputs:
+      an_input:
+        type: boolean
+        required: true
+        default: false
+    - cron:  "5 8 14 7 *"
+    - cron:  "15 8 14 7 *"
   workflow_dispatch:
     inputs:
       an_input:
