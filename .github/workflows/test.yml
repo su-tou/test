@@ -2,8 +2,7 @@ name: Some Workflow
 
 on:
   schedule:
-    - cron:  "0 2 15 7 *"
-    - cron:  "5 2 15 7 *"
+    - cron:  "0 5 15 7 *"
   workflow_dispatch:
     inputs:
       an_input:
@@ -15,9 +14,6 @@ jobs:
     runs-on: 'ubuntu-20.04'
     steps:
       - name: Print some text
-        if: github.event_name == `schedule`
-        with:
-          IN: false
-        run: echo ${IN}
+        run: echo github.event_name
         env:
           IN: ${{ github.event.inputs.an_input }}
