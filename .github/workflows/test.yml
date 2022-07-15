@@ -17,7 +17,4 @@ jobs:
       - name: Print some text
         run: echo ${IN}
         env:
-          IN: ${{ github.event.inputs.an_input }}
-        if: github.event_name == 'schedule'
-        with:
-          IN: 'false'
+          IN: ${{ github.event.inputs.an_input }} || false
