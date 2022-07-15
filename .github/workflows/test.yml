@@ -15,6 +15,9 @@ jobs:
     runs-on: 'ubuntu-20.04'
     steps:
       - name: Print some text
+        if: github.event_name == `schedule`
+        with:
+          IN: false
         run: echo ${IN}
         env:
-          IN: ${{ github.event.inputs.an_input }} || false
+          IN: ${{ github.event.inputs.an_input }}
