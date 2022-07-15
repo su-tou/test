@@ -2,8 +2,8 @@ name: Some Workflow
 
 on:
   schedule:
-    - cron:  "0 1 15 7 *"
-    - cron:  "5 1 15 7 *"
+    - cron:  "0 2 15 7 *"
+    - cron:  "5 2 15 7 *"
   workflow_dispatch:
     inputs:
       an_input:
@@ -20,4 +20,4 @@ jobs:
           IN: ${{ github.event.inputs.an_input }}
         if: github.event_name =='schedule'
         with:
-          IN: false
+          IN: 'false'
